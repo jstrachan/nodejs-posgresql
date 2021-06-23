@@ -22,6 +22,8 @@ db:
   team: myteam
   name: demodb
   owner: myowner
+  volumeSize: 1Gi
+  numberOfInstances: 2
 
 env:
   DB_HOST: myteam-demodb

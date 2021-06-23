@@ -6,8 +6,8 @@ metadata:
 spec:
   teamId: "{{ .Values.db.team }}"
   volume:
-    size: 1Gi
-  numberOfInstances: 2
+    size: {{ .Values.db.volumeSize }}
+  numberOfInstances: {{ .Values.db.numberOfInstances }}
   users:
     {{ .Values.db.owner }}:  # database owner
     - superuser
