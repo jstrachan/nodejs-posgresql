@@ -2,6 +2,10 @@
 
 A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js for this [Node.js PostgreSQL tutorial](https://geshan.com.np/blog/2021/01/nodejs-postgresql-tutorial/).
 
+## Deploy with Jenkins X
+
+Follow the [create quickstart documentation](https://jenkins-x.io/v3/develop/create-project/#create-a-new-project-from-a-quickstart) choosing the `nodesql-postgresql` quickstart from the list
+
 ## Deploy with Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/geshan/nodejs-posgresql/tree/master)

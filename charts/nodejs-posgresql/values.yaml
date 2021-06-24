@@ -19,6 +19,8 @@ db:
   # should we create a Postgresql Custom resource to spin up the database using the
   # postgres operator: https://github.com/zalando/postgres-operator
   createOperatorCRD: true
+  image: postgres:13.3
+  #image: docker.io/bitnami/postgresql:11.12.0-debian-10-r23
   team: myteam
   name: demodb
   owner: myowner

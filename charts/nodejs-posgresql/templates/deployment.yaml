@@ -40,7 +40,7 @@ spec:
 {{- end }}
       initContainers:
       - name: init-db
-        image: docker.io/bitnami/postgresql:11.12.0-debian-10-r23
+        image: {{ .Values.db.image }}
         command: [ "bin/sh", "-c", "psql -a -U $DB_USER -h $DB_HOST -d $DB_NAME -f /data/init.sql" ]
         env:
 {{- range $pkey, $pval := .Values.env }}
@@ -51,7 +51,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: password
-              name: myowner.myteam-demodb.credentials.postgresql.acid.zalan.do
+              name: {{ .Values.db.owner }}.{{ .Values.db.team }}-{{ .Values.db.name }}.credentials.postgresql.acid.zalan.do
         volumeMounts:
           - mountPath: /data
             name: init-sql
@@ -70,7 +70,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: password
-              name: myowner.myteam-demodb.credentials.postgresql.acid.zalan.do
+              name: {{ .Values.db.owner }}.{{ .Values.db.team }}-{{ .Values.db.name }}.credentials.postgresql.acid.zalan.do
         envFrom:
 {{ toYaml .Values.envFrom | indent 10 }}
         ports:
